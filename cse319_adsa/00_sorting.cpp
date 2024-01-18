@@ -25,12 +25,12 @@ int merge(int a[], int p, int q, int r) {
     int n1 = q - p + 1, n2 = r - q, ops_cnt = 0;
     int* left = new int[n1];
     int* right = new int[n2];
-    
+
     for (int i = p; i <= q; i++) {
         left[i - p] = a[i];
         ops_cnt++;
     }
-    
+
     for (int i = q + 1; i <= r; i++) {
         right[i - q - 1] = a[i];
         ops_cnt++;
@@ -47,13 +47,13 @@ int merge(int a[], int p, int q, int r) {
             i++, k++;
         }
     }
-    
+
     while (j < n1) {
         ops_cnt++;
         a[i] = left[j];
         i++, j++;
     }
-    
+
     while (k < n2) {
         ops_cnt++;
         a[i] = right[k];
@@ -69,9 +69,9 @@ int merge(int a[], int p, int q, int r) {
 int merge_sort(int a[], int p, int r) {
     int ops_cnt = 0;
     if (r - p < 1) return 1;
-    
+
     int mid = (p + r) / 2;
-    
+
     ops_cnt = merge_sort(a, p, mid)
         + merge_sort(a, mid + 1, r)
         + merge(a, p, mid, r);
@@ -142,12 +142,12 @@ int main() {
     cout << "Array Size | Randomized elements |    Ordered Array    |    Reversed array   |" << endl;
     cout << "           | InsSort | MergeSort | InsSort | MergeSort | InsSort | MergeSort |" << endl;
     for (int i = 0; i < 3; i++) {
-    	cout << "n = " << n[i] << "   |";
+        cout << "n = " << n[i] << "   |";
         for (int j = 0; j < 6; j += 2) {
-	    cout << setw(8) << ops_cnt[i][j] << " |" << setw(10) << ops_cnt[i][j + 1] << " |";
+            cout << setw(8) << ops_cnt[i][j] << " |" << setw(10) << ops_cnt[i][j + 1] << " |";
         }
-	cout << endl;
+        cout << endl;
     }
-   
+
     return 0;
 }
