@@ -79,9 +79,11 @@ int opr_pr() {
             furthest = -1;
             for (k = 0; k < frame_count; k++) {
                 for (j = i + 1; j < ref_count; j++) {
-                    if (frames[k] == ref_string[j] && j > furthest_hit) {
-                        furthest_hit = j;
-                        furthest = k;
+                    if (frames[k] == ref_string[j]) {
+                        if (j > furthest_hit) {
+                            furthest_hit = j;
+                            furthest = k;
+                        }
                         break;
                     }
                 }
