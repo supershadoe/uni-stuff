@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int n, track_cnt, cur_head;
+static int n, track_cnt, cur_head, max = 0;
 static int *tracks;
 
 static int is_out_of_range(int r) {
@@ -13,26 +13,33 @@ static int is_out_of_range(int r) {
 }
 
 int fcfs_ds() {
-    int i, seek_time = 0;
-    int head;
+    int i, seek_time = 0, s;
+    int head = cur_head;
     for (i = 0; i < n; i++) {
-        seek_time += head - tracks[i];
+        s = head - tracks[i];
+        seek_time += s < 0 ? -s: s;
         head = tracks[i];
     }
     return seek_time;
 }
 
 int sstf_ds() {
-    int i, j, shortest, seek_time = 0, *finish;
-    finish = calloc(sizeof(int), n);
+    int i, j, shortest, s1, s2, seek_time = 0, head = cur_head;
+    int *finish = calloc(sizeof(int), n);
     for (i = 0; i < n; i++) {
         shortest = -1;
         for (j = 0; j < n; j++) {
             if (finish[j]) continue;
-            if (shortest < 0 || head - tracks[i] < head - tracks[shortest])
-                shortest = i;
+            s1 = head - tracks[j];
+            s2 = head - tracks[shortest];
+            s1 = s1 < 0 ? -s1 : s1;
+            s2 = s2 < 0 ? -s2 : s2;
+            if (shortest < 0 || s1 < s2)
+                shortest = j;
         }
-        seek_time += head - tracks[shortest];
+        s2 = head - tracks[shortest];
+        s2 = s2 < 0 ? -s2 : s2;
+        seek_time += s2;
         head = tracks[shortest];
         finish[shortest] = 1;
     }
@@ -41,14 +48,11 @@ int sstf_ds() {
 }
 
 int scan_ds() {
-    int i;
-    while (i < n) {
-
-    }
+    return cur_head + max;
 }
 
 int main() {
-    int i, fcfs, sstf;
+    int i, fcfs, sstf, scan;
 
     printf("Enter number of tracks: ");
     scanf("%d", &track_cnt);
@@ -65,6 +69,8 @@ int main() {
     printf("Enter the track reference string: ");
     for (i = 0; i < n; i++) {
         scanf("%d", &tracks[i]);
+        if (tracks[i] > max)
+            max = tracks[i];
         if (is_out_of_range(tracks[i])) return 1;
     }
 
@@ -72,11 +78,16 @@ int main() {
     scanf("%d", &cur_head);
     if (is_out_of_range(cur_head)) return 1;
 
+    fcfs = fcfs_ds();
+    sstf = sstf_ds();
+    scan = scan_ds();
+
     printf(
         "Seek time according to each algorithm:\n"
         "FCFS: %d\n"
-        "SSTF: %d\n",
-        fcfs, sstf
+        "SSTF: %d\n"
+        "SCAN: %d\n",
+        fcfs, sstf, scan
     );
 
     return 0;

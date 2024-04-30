@@ -80,7 +80,7 @@ int safety() {
 }
 
 int main() {
-    int res;
+    int i, res;
 
     int req[] = {3, 2, 3, 3};
     int pid = 5;
@@ -90,6 +90,10 @@ int main() {
     if (!res) {
         printf("Cannot grant the request.\n");
         return 0;
+    }
+    for (i = 0; i < RES_CNT; i++) {
+        allocation[pid][i] += req[i];
+        available[i] -= req[i];
     }
     res = safety();
     if (!res) {

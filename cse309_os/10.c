@@ -69,7 +69,7 @@ int main() {
     int i = 0, p[PHIL_CNT];
     pthread_t tids[PHIL_CNT];
     for (i = 0; i < PHIL_CNT; i++) {
-        sem_init(&hungry_phils[i], 0, 1);
+        sem_init(&hungry_phils[i], 0, 0);
         p[i] = i;
     }
     sem_init(&mutex, 0, 1);
