@@ -14,7 +14,7 @@ follow: FirstFollowT = {}
 
 def compute_first(var: str, /) -> set[str]:
     # R1/R2
-    if (not var.isupper()) or var == EPSILON:
+    if var.islower() or var == EPSILON:
         return {var}
     
     # For variables where first is already calculated
