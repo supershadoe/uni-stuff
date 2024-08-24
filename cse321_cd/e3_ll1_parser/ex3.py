@@ -152,29 +152,33 @@ class LL1:
         stack.append(END_MARKER)
         stack.append(self._start_symbol)
 
-        buf = iter(f"{word}{END_MARKER}")
-        pointer = next(buf)
-
         if debug:
-            print(f"Parsing {word}:\n\nStack\nInput pointer\nAction taken\n")
+            print(f"Parsing {word}:\n\nStack\nInput buffer\nAction taken\n")
+
+        word = f"{word}{END_MARKER}"
+        buf = iter(word)
+        pointer = next(buf)
+        loc = 0
+
         try:
             while stack:
                 if debug:
-                    print(f"{stack}\n{pointer}\n", end="")
+                    print(f"{stack}\n{word[loc:]}\n", end="")
                 x = stack[-1]
                 if not x.isupper() or x == END_MARKER:
                     if x == pointer:
                         if debug:
-                            print("Matched terminal\n")
+                            print(f"Matched terminal {x}\n")
                         stack.pop()
                         pointer = next(buf)
+                        loc += 1
                     else:
                         raise LL1ParsingError(error_msg)
                 else:
                     if (rule := self._parsing_table.get((x, pointer))):
-                        _, production = rule
+                        head, production = rule
                         if debug:
-                            print("Expanding var\n")
+                            print(f"Expanding M[{x}, {pointer}] = {head} -> {production}\n")
                         stack.pop()
                         for symbol in production[::-1]:
                             if symbol != EPSILON:
