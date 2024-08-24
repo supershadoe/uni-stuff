@@ -43,16 +43,19 @@ class LL1:
         self._compute_parsing_table()
 
     def _compute_first(self: Self, var: str, /) -> set[str]:
-        # R1/R2
-        if var.islower() or var == EPSILON:
-            return {var}
-        
-        # For variables where first is already calculated
-        if var in self._first:
-            return self._first[var]
-
         first_var: set[str] = set()
-        body = self._productions[var] if len(var) == 1 else [var]
+        body = ''
+
+        if len(var) == 1:
+            # R1/R2
+            if not var.isupper() or var == EPSILON:
+                return {var}
+            # For variables where first is already calculated
+            if var in self._first:
+                return self._first[var]
+            body = self._productions[var]
+        else:
+            body = [var]
 
         # R3
         for production in body:
@@ -153,13 +156,13 @@ class LL1:
         pointer = next(buf)
 
         if debug:
-            print(f"Parsing {word}:\n\nInput pointer\nAction taken\nStack\n")
+            print(f"Parsing {word}:\n\nStack\nInput pointer\nAction taken\n")
         try:
             while stack:
                 if debug:
                     print(f"{stack}\n{pointer}\n", end="")
                 x = stack[-1]
-                if x.islower() or x == END_MARKER:
+                if not x.isupper() or x == END_MARKER:
                     if x == pointer:
                         if debug:
                             print("Matched terminal\n")
@@ -202,7 +205,7 @@ def parse_file(fname: str, /) -> ProductionsT:
 parser = LL1(parse_file(sys.argv[1]))
 parser.print_info()
 for word in sys.argv[2:]:
-    if parser.parse(word, debug=False):
+    if parser.parse(word, debug=True):
         print(f"{word} is accepted.")
     else:
         print(f"{word} is not accepted.")
