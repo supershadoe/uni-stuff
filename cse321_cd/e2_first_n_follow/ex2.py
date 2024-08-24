@@ -13,16 +13,19 @@ follow: FirstFollowT = {}
 
 
 def compute_first(var: str, /) -> set[str]:
-    # R1/R2
-    if var.islower() or var == EPSILON:
-        return {var}
-    
-    # For variables where first is already calculated
-    if var in first:
-        return first[var]
-
     first_var: set[str] = set()
-    body = productions[var] if len(var) == 1 else [var]
+    body = ''
+
+    if len(var) == 1:
+        # R1/R2
+        if not var.isupper() or var == EPSILON:
+            return {var}
+        # For variables where first is already calculated
+        if var in first:
+            return first[var]
+        body = productions[var]
+    else:
+        body = [var]
 
     # R3
     for production in body:
