@@ -11,29 +11,33 @@ void yyerror(const char* s);
 %token REL
 
 %%
-S : IF '(' C ')' S { printf("\t==> simple if statement\n"); }
-  | IF '(' C ')' S ELSE S { printf("\t==> if-else statement\n"); }
-  | ID '=' E ';' { printf("\t==> assignment\n"); }
+S : IF '(' C ')' S { printf("IF "); }
+  | IF '(' C ')' S ELSE S { printf("IF-ELSE "); }
+  | I '=' E ';' { printf("= "); }
   ;
 
-C : ID REL ID { printf("\t==> comparison\n"); }
+C : I REL I { printf("REL "); }
   ;
 
-E : E '+' T { printf("\t==> addition\n"); }
+E : E '+' T { printf("+ "); }
   | T
   ;
 
-T : T '*' F { printf("\t==> multiplication\n"); }
+T : T '*' F { printf("* "); }
   | F
   ;
 
-F : '(' E ')' { printf("\t==> brackets\n"); }
-  | ID
+F : '(' E ')'
+  | I
+  ;
+
+I : ID { printf("ID "); }
   ;
 %%
 
 int main() {
     yyparse();
+    printf("\n");
     return 0;
 }
 
