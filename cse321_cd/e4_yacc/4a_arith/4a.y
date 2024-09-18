@@ -10,23 +10,24 @@ void yyerror(const char* s);
 %token ID
 
 %%
-E : E '+' T { printf("\t==> addition\n"); }
+E : E '+' T { printf("+ "); }
   | T
   ;
 
-T : T '*' F { printf("\t==> multiplication\n"); }
+T : T '*' F { printf("* "); }
   | F
   ;
 
-F : '(' E ')' { printf("\t==> brackets\n"); }
-  | ID
-  | INT
-  | FLOAT
+F : '(' E ')'
+  | ID { printf("ID "); }
+  | INT { printf("INT "); }
+  | FLOAT { printf("FLOAT "); }
   ;
 %%
 
 int main() {
     yyparse();
+    printf("\n");
     return 0;
 }
 
