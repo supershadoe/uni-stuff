@@ -18,7 +18,7 @@ s : IF LPAREN cond RPAREN s { printf("IF "); }
   | WHILE LPAREN cond RPAREN s { printf("WHILE "); }
   | DO s WHILE LPAREN cond RPAREN SEMICOL { printf("DO-WHILE "); }
   | id LPAREN arg RPAREN SEMICOL { printf("CALL "); }
-  | assign SEMICOL { printf("= "); }
+  | assign SEMICOL
   ;
 
 arg :

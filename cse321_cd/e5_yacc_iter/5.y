@@ -14,7 +14,7 @@ void yyerror(const char* s);
 s : FOR LPAREN assign SEMICOL cond SEMICOL assign RPAREN s { printf("FOR "); }
   | WHILE LPAREN cond RPAREN s { printf("WHILE "); }
   | DO s WHILE LPAREN cond RPAREN SEMICOL { printf("DO-WHILE "); }
-  | assign SEMICOL { printf("= "); }
+  | assign SEMICOL
   ;
 
 assign : id EQ e { printf("= "); }
