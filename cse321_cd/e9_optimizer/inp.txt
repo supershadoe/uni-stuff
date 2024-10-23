@@ -1,0 +1,6 @@
+t0 = a + b
+t1 = t0 / a
+t2 = a + b
+t2 = t1 * t2
+a = t2
+t3 = a + b
