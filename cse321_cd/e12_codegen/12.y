@@ -24,9 +24,9 @@ int alloc_reg(char id);
 %%
 p: stt prog;
 
-prog: stt ENDL prog | epsilon;
+prog: stt prog | epsilon;
 
-stt: ID EQ expr {
+stt: ID EQ expr ENDL {
        reg_alloc[$3] = $1;
        printf("MOV %c, R%d\n", $1, $3);
    }
