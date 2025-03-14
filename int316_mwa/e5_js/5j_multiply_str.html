@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5j: Multiply string</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body><script type="text/javascript">
+    function multiplyStr(str, n = 1) {
+        var res = '';
+        for (var i = 0; i < n; i++)
+            res += str;
+        return res;
+    }
+    var a = prompt("Enter some string");
+    var n = parseInt(prompt("Enter number of times to multiply."));
+    if (isNaN(n) || n < 1) n = undefined; // def param of 1 should work
+    if (a === null)
+        document.writeln("No O/P");
+    else
+        document.write("Concatenated string: " + multiplyStr(a, n));
+</script></body>
+</html>

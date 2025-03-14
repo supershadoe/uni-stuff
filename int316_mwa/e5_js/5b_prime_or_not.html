@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5b: Prime or not</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var val = parseInt(prompt("Enter a number."));
+        if (val <= 0) {
+            alert("Invalid input, provide a val > 0");
+            document.write('No O/P');
+        } else {
+            var isPrime = false;
+            for (let i = 2; i <= val/2; i++)
+                isPrime = val % 2 !== 0;
+            document.write(`${val} is${isPrime ? ' not ': ' '}a prime number.`);
+        }    
+    </script>
+</body>
+</html>

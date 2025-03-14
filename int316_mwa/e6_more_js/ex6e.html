@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        body > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #tbl {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        #tbl th, #tbl td {
+            border: 1px solid #000;
+            padding: 10px 20px;
+        }
+        button {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+        button:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table id="tbl">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>so and so</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+		    <td>name 2</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>name 3</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>name 4</td>
+                    <td>18</td>
+                </tr>
+            </tbody>
+        </table>
+        <button>Modify cell</button>
+    </div>
+    <script type="text/javascript">
+        function modifyCell(row, col, val) {
+            const rowEl = tbl.getElementsByTagName('tr').item(row - 1);
+            if (!rowEl) return false;
+            const cell = rowEl.getElementsByTagName('td').item(col - 1);
+            if (!cell) return false;
+            cell.innerText = val;
+            return true;
+        }
+        const tbl = document.querySelector('#tbl tbody');
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            const row = parseInt(prompt("Enter the row num"));
+            const col = parseInt(prompt("Enter the col num"));
+            const val = prompt("Enter the new val");
+            if (modifyCell(row, col, val)) {
+                alert("Modified cell value!");
+            } else {
+                alert("Failed to modify value.");
+            }
+        });
+    </script>
+</body>
+</html>

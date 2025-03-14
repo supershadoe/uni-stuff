@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SASTRA [
+    <!ELEMENT SASTRA (schools)>
+    <!ELEMENT schools (school+)>
+    <!ELEMENT school (#PCDATA)>
+    <!ATTLIST school category CDATA #REQUIRED>
+    <!ATTLIST school campus CDATA #IMPLIED>
+    <!ATTLIST school degree (ug|pg) #IMPLIED>
+]>
+<SASTRA>
+    <schools>
+        <school category="computing">SOC</school>
+        <school category="management" campus="main">SOM</school>
+        <school category="law" degree="ug">BL</school>
+    </schools>
+</SASTRA>

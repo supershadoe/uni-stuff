@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5k: Splice a string</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body><script type="text/javascript">
+    function spliceStr(str, n) {
+        if (n <= 0)
+            return [str];
+        var res = []
+        for (var i = 0; i < str.length; i += n)
+            res.push(str.slice(i, i + n));
+        return res;
+    }
+    var a = prompt("Enter some string");
+    var n = parseInt(prompt("Enter length of segments"));
+    if (a === null || isNaN(n))
+        document.writeln("No O/P due to invalid input");
+    else
+        document.write("Spliced string: " + spliceStr(a, n));
+</script></body>
+</html>

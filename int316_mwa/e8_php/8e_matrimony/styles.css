@@ -1,0 +1,36 @@
+body {
+    background-color: #DDBEEB;
+    color: #632C3B;
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    padding: 0 16px;
+}
+
+a {
+    color: #632C3B;
+}
+
+a:active {
+    color: #8b7a7f;
+}
+
+button, input[type="submit"], input[type="reset"] {
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: 0px 0px 2px #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: #FFDAD4;
+}
+
+main {
+    padding: 16px 0 64px;
+    height: 65vh;
+}
+
+.big {
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}

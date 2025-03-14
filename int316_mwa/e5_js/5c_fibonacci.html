@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5c: Fibonacci</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body><script type="text/javascript">
+    const val = parseInt(prompt("Enter number of fibonacci numbers required."));
+    if (val <= 0) {
+        alert("Invalid input, provide a val > 0");
+        document.write("No O/P")
+    } else {
+        let a = 1;
+        let b = 1;
+        let c = 0;
+        document.writeln("Fibonacci series:");
+        for (let i = 0; i < val; i++) {
+            if (i === 0) {
+                document.writeln(`${a}`);
+                continue;
+            }
+            if (i === 1) {
+                document.writeln(`${b}`);
+                continue;
+            }
+            c = a + b;
+            document.writeln(`${c}`);
+            a = b;
+            b = c;
+        }
+        document.write(`Number of digits in ${val} is ${digits}`);
+    }
+</script></body>
+</html>

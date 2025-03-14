@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI';
+    color: white;
+    padding-top: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b1 {
+    background-color: skyblue;
+}
+
+.b2 {
+    position: absolute;
+    background-color: gold;
+}
+
+.b3 {
+    position: absolute;
+    background-color: black;
+}
+
+#inline-two {
+    top: 10px;
+    left: 200px;
+}
+
+#inline-three {
+    top: 10px;
+    left: 400px;
+}
+
+#stacked-one {
+    z-index: 0;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+#stacked-two {
+    z-index: 10;
+    top: 150px;
+    left: 170px;
+}
+
+#stacked-three {
+    z-index: 20;
+    top: 220px;
+    left: 220px;
+}
+
+#padded-one {
+    margin-top: 20px;
+    padding: 40px;
+    width: max-content;
+}
+
+#margin-box {
+    margin: 20px 0 20px 20px;
+    padding: 20px;
+    color: red;
+    border: 1px dashed brown;
+}
+
+#bordered-box {
+    margin-top: 20px;
+    padding: 10px;
+    width: 150px;
+    background-color: red;
+    color: yellow;
+    border: 40px solid black;
+}
+
+#shadow-box {
+    margin: 50px 0;
+    padding: 10px;
+    width: 150px;
+    background-color: red;
+    color: yellow;
+    border: 40px solid orange;
+    box-shadow: 0 10px 10px 10px gray;
+}

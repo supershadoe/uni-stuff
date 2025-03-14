@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5g: Extract substring</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body><script type="text/javascript">
+    function substring() {
+        var a = prompt("Enter some string");
+        var n = parseInt(prompt("Enter number of chars to extract."));
+        if (isNaN(n) || n < 0 || n > a.length)
+            document.writeln("No O/P due to typing invalid number of characters.");
+        else
+            document.writeln("Substring of " + n + " characters: " + a.slice(0, n));
+    }
+    substring();
+</script></body>
+</html>

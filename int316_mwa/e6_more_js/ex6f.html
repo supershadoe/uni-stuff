@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        body > div {
+            display: flex;
+            justify-content : center;
+        }
+        button {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+        button:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello hi, this is <i>some italics text</i>.</p>
+    <button id="btn">Modify color</button>
+    <script type="text/javascript">
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            const p = document.getElementsByTagName('p')[0];
+            p.style.backgroundColor = prompt("Enter some color.");
+        });
+    </script>
+</body>
+</html>

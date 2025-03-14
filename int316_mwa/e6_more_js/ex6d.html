@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        body > div {
+            display: flex;
+            justify-content : center;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Some link</a>
+    <br><br>
+    <p>Hello hi, this is <i>some italics text</i>.</p>
+    <script type="text/javascript">
+        const link = document.getElementsByTagName('a')[0];
+        const italics = document.querySelector('a ~ p i');
+        if (italics) {
+            link.addEventListener('mouseover', function() {
+                italics.style.backgroundColor = 'yellow';
+            });
+            link.addEventListener('mouseout', function() {
+                italics.style.backgroundColor = 'transparent';
+            });
+        }
+    </script>
+</body>
+</html>

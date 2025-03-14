@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        body > div {
+            display: flex;
+            justify-content : center;
+        }
+        #frm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        input {
+            font-family: inherit;
+            font-size: inherit;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin-left: 12px;
+        }
+        input[type=submit] {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+        input[type=submit]:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form id="frm">
+            <label for="first-name">First name</label>
+            <input type="text" placeholder="John" id="first-name" />
+            <label for="last-name">Last name</label>
+            <input type="text" placeholder="Doe" id="last-name" />
+            <input type="submit" />
+        </form>
+    </div>
+    <script type="text/javascript">
+        const frm = document.getElementById('frm');
+        frm.addEventListener('submit', function() {
+            const firstName = document.getElementById('first-name');
+            const lastName = document.getElementById('last-name');
+            if (!firstName.value || !lastName.value) {
+                alert("Enter your full name!");
+            } else {
+                alert('Your name is ' + firstName.value + ' ' + lastName.value);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        input {
+            font-family: inherit;
+            font-size: inherit;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin-left: 12px;
+        }
+        input[type=submit] {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+        input[type=submit]:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <h3>Fitness</h3>
+    <h5>Calculate your ideal weight</h5>
+    <form id="frm">
+        <label for="first-name">Enter height (cm)</label>
+        <input type="number" id="ht" />
+        <input type="submit" />
+    </form>
+    <script type="text/javascript">
+        const frm = document.getElementById('frm');
+        frm.addEventListener('submit', function(ev) {
+            ev.preventDefault();
+            const ht = document.getElementById('ht');
+            if (!ht.value) {
+                alert("Enter your height!");
+            } else {
+                const p = document.createElement('p');
+                p.innerText = 'Your ideal weight should be ' + (parseFloat(ht.value) - 100).toString();
+                document.body.appendChild(p);
+            }
+        });
+    </script>
+</body>
+</html>

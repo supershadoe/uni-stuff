@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.text-3xl {
+    font-size: 32px;
+}
+
+.text-xl {
+    font-size: 24px;
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    background-color: powderblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+nav .links {
+    display: flex;
+    gap: 8px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 24px;
+}
+
+.hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.btn {
+    border: 0;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+}
+
+.btn:hover, .btn:focus-visible {
+    border: 0;
+    outline-width: 0;
+}
+
+.btn-blue {
+    color: black;
+    background-color: powderblue;
+}
+
+.btn-blue:hover, .btn-blue:focus-visible {
+    background-color: rgb(83, 215, 233);
+}
+
+.btn-orange {
+    color: black;
+    background-color: lightcoral;
+}
+
+.btn-orange:hover, .btn-orange:focus-visible {
+    background-color: rgb(176, 93, 93);
+}
+
+body.signin {
+    background-color: powderblue;
+}
+
+.signin main {
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.vert {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cta {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.login-wrapper, .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 24px;
+}
+
+.login-container, .project-container {
+    background-color: white;
+    border-radius: 24px;
+    align-items: center;
+    display: flex;
+    padding: 48px;
+    gap: calc(0.3 * 100vw);
+}
+
+.login-form, .login-err {
+    display: flex;
+    flex-direction: column;
+    width: calc(0.25 * 100vw);
+    gap: 20px;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid grey;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input:focus-visible {
+    outline-width: 0;
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+
+.flights {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flight {
+    background-color: rgb(225, 233, 234);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 8px;
+    transition: transform .3s ease-in-out;
+}
+
+.flight:hover {
+    transform: scale3d(1.01, 1.1, 1.1);
+}

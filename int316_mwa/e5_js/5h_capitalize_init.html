@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5h: Capitalize initial letter of string</title>
+    <style>
+        body {
+            font-family: 'Calibri';
+            font-size: 26px;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body><script type="text/javascript">
+    function capitalize() {
+        var a = prompt("Enter some string");
+        if (a === null)
+            document.writeln("No O/P");
+        else
+            document.writeln("Capitalized string: " + a.slice(0, 1).toUpperCase() + a.slice(1));
+    }
+    capitalize();
+</script></body>
+</html>

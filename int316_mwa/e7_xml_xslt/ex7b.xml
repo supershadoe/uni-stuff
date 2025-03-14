@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Software SYSTEM "ex7b.dtd">
+<Software>
+    <languages>
+        <language>C</language>
+        <language>C++</language>
+    </languages>
+    <application>
+        <use-case domain="medical">Billing</use-case>
+    </application>
+    <system>
+        <component type="processor">Intel Core i3</component>
+    </system>
+</Software>

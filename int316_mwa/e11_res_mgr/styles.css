@@ -1,0 +1,142 @@
+html {
+    font-family: 'Calibri';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e5d7eb;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+nav a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+nav .vert {
+    align-items: end;
+}
+
+main {
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.logo {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.1px;
+}
+
+.vert {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.username {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.cta {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.login-wrapper, .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 24px;
+}
+
+.login-container, .project-container {
+    background-color: white;
+    border-radius: 24px;
+    align-items: center;
+    display: flex;
+    padding: 48px;
+    gap: calc(0.3 * 100vw);
+}
+
+.login-form, .login-err {
+    display: flex;
+    flex-direction: column;
+    width: calc(0.25 * 100vw);
+    gap: 20px;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid grey;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input:focus-visible {
+    outline-width: 0;
+    border: 0;
+    border-bottom: 1px solid #000;
+}
+
+.btn {
+    border: 0;
+    padding: 8px 16px;
+    background-color: powderblue;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    
+}
+
+.btn:hover, .btn:focus-visible {
+    border: 0;
+    outline-width: 0;
+    background-color: rgb(83, 215, 233);
+}
+
+.tabs-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: calc(0.1 * 100vw);
+    font-size: 24px;
+}
+
+.tab-item {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer {
+    color: grey;
+}

@@ -1,0 +1,12 @@
+<!ELEMENT Software (languages, application, system)>
+
+<!ELEMENT languages (language+)>
+<!ELEMENT application (use-case+)>
+<!ELEMENT system (component+)>
+
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT use-case (#PCDATA)>
+<!ELEMENT component (#PCDATA)>
+
+<!ATTLIST use-case domain (medical|service|manufacturing|other) #REQUIRED>
+<!ATTLIST component type (processor|motherboard|gpu|hdd|ram|other) #REQUIRED>

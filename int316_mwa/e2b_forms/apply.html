@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Corp: Application</title>
+</head>
+<body bgcolor="#37323E" text="#FFFFFF" link="#FFFFFF" alink="#DE9E36" vlink="#FFFFFF">
+    <font face="Calibri" size="4">
+        <nav>
+            <table width="100%" cellpadding="10">
+                <tr>
+                    <td><a href="./index.html"><strong>XYZ Corp</strong></a></td>
+                    <td align="right">
+                        <a href="./index.html#about"><b>About Us</b></a>&emsp;
+                        <a href="#"><b>Sign in</b></a>&emsp;
+                        <a href="./apply.html"><b>Apply</b></a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+
+        <h3>Application form</h3>
+        <form method="post" action="./success.html">
+            <fieldset>
+                <legend>Login credentials</legend>
+                <table cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td align="right"><label for="uname">Username</label></td>
+                        <td><input id="uname" name="uname" type="text" placeholder="johndoe123" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="pwd">Password</label></td>
+                        <td><input id="pwd" name="pwd" type="password" /></td>
+                    </tr>
+                </table>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>User Details</legend>
+                <table cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td align="right"><label for="name">Name</label></td>
+                        <td><input id="name" name="name" type="text" placeholder="John Doe" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="phno">Phone number</label></td>
+                        <td><input id="phno" name="phno" type="tel" placeholder="+1 (653) 343-343" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="email">e-mail ID</label></td>
+                        <td><input id="email" name="email" type="email" placeholder="john.doe@example.com" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label for="dob">Date of Birth</label></td>
+                        <td><input id="dob" name="dob" type="date" /></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Gender</td>
+                        <td>
+                            <input id="male-gender" name="gender" value="male" type="radio" />
+                            <label for="male-gender">Male</label>
+                            <input id="female-gender" name="gender" value="female" type="radio" />
+                            <label for="female-gender">Female</label>
+                            <input id="other-gender" name="gender" value="other" type="radio" checked />
+                            <label for="other-gender">Other</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Skills</td>
+                        <td>
+                            <input id="flutter-sk" name="skill" value="flutter" type="checkbox" />
+                            <label for="flutter-sk">Flutter</label><br>
+                            <input id="web-sk" name="skill" value="webdev" type="checkbox" />
+                            <label for="web-sk">Web Dev</label><br>
+                            <input id="db-sk" name="skill" value="db" type="checkbox" />
+                            <label for="db-sk">Database architect</label><br>
+                            <input id="other-sk" name="skill" value="other" type="checkbox" />
+                            <input id="other-sk-text" name="other" type="text" placeholder="Other skills" /><br>
+
+                        </td>
+                    </tr>
+                </table>
+            </fieldset><br>
+
+            <input type="submit" />&emsp;<input type="reset" />
+        </form>
+
+    </font>
+</body>
+</html>

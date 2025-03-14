@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6.1</title>
+    <style>
+        body {
+            background-color: powderblue;
+            font-family: 'Calibri';
+            font-size: 25px;
+        }
+        body > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        select {
+            font-family: inherit;
+            font-size: inherit;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin-left: 12px;
+        }
+        button {
+            font-family: inherit;
+            font-size: 20px;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+        button:hover {
+            background-color: #DDDDDD;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="dropdown">Courses</label>
+            <select name="course">
+                <option value="CSBS">CSBS</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="ICT">ICT</option>
+                <option value="Mech">Mech</option>
+            </select>
+        </div>
+        <button>Display opts</button>
+    </div>
+    <script type="text/javascript">
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            const opt = document.getElementsByTagName('option');
+            let res = `There are ${opt.length} options: `;
+            for (let i = 0; i < opt.length; i++) {
+                const tag = opt.item(i);
+                if (i > 0)
+                    res += ', ';
+                res += tag.innerText;
+            }
+            alert(res);
+        });
+    </script>
+</body>
+</html>
