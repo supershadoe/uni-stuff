@@ -1,0 +1,10 @@
+v0 = 10;
+t = 0 : 0.005 : 0.05;
+R = 100;
+C = 1e-4;
+vc = v0 * ( 1 - exp(-t/(R*C)) );
+plot(t, vc);
+grid on;
+title('Transient Analysis - RC Circuit');
+xlabel('Time (s)');
+ylabel('Voltage across Capacitor (V)');
